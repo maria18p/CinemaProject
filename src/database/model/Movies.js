@@ -30,8 +30,7 @@ export const tableExists = async () => {
 export const all_movies = async () => {
   if (!tableExists()) throw TABLE_NOT_FOUND_ERR;
   console.log('GETTING ALL MOVIES');
-  return await schema
-    .findAll({})
+  return await Cinema_movie_schema.findAll({})
     .then(async (rows) => {
       return rows;
     })

@@ -1,4 +1,4 @@
-import express, { query } from 'express';
+import express from 'express';
 import {
   get_all_movies,
   add_movie,
@@ -43,10 +43,14 @@ movieRouter.put('/updateSeats', async (req, res) => {
   return await returnResponse(queryResult, res);
 });
 
+movieRouter.get('/allMovies', async (req, res) => {
+  const queryResult = await get_all_movies();
+  return await returnResponse(queryResult, res);
+});
+
 const returnResponse = async (responseContent, res) => {
   console.log(responseContent);
   return res.status(200).json(responseContent);
 };
 
-
-export default movieRouter
+export default movieRouter;
