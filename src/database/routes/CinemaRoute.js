@@ -47,3 +47,6 @@ const returnResponse = async (responseContent, res) => {
   console.log(responseContent);
   return res.status(200).json(responseContent);
 };
+
+
+export default movieRouter
